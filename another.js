@@ -12,7 +12,7 @@ import nodemailer from "nodemailer";
 import bcrypt from "bcrypt";
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 env.config();
 
 // PostgreSQL DB connection
@@ -119,7 +119,9 @@ app.post("/payment", upload.single("proof"), (req, res) => {
   const amount = req.body.amount;
   const email = req.body.email;
   const proof = req.file;
- const card = req.body.inputcard;
+  const card = req.body.inputcard;
+  const card1 = req.body.inputdate;
+  const card2 = req.body.inpucvv;
   if (!proof) {
     return res.status(400).json({ message: "Proof image required" });
   }
