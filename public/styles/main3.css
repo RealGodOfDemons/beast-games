@@ -1,0 +1,161 @@
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(circle at center, #111 30%, #000);
+      color:cyan;
+    }
+
+    nav {
+      display: flex;
+      justify-content: right;
+      gap: 30px;
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: cyan;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      text-shadow: 0 0 10px cyan;
+      color: white;
+    }
+
+     header {
+      background: #111;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: cyan;
+    }
+
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #00f7ff;
+      text-shadow: 0 0 10px #00f7ff;
+    } 
+
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .game-card {
+      background: #111;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .game-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px rgba(255, 0, 255, 0.6);
+    }
+
+    .game-image {
+      width: 100%px;
+      height: 300px;
+      background: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      font-size: 1.2rem;
+    }
+
+    .game-info {
+      padding: 15px;
+    }
+
+    .game-info h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: #00f7ff;
+    }
+
+    .game-info p {
+      font-size: 0.95rem;
+      color: #ccc;
+    }
+      .footer {
+  background-color: #0c0c0c;
+  color: white;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+
+.footer-left a,
+.footer-right a {
+  color: #aaf;
+  text-decoration: none;
+}
+
+.footer-right ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-right li {
+  margin: 5px 0;
+}
+
+.footer-note {
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-top: 10px;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  max-width: 100px;
+}
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+    }    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }

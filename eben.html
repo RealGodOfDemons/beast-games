@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/payment.css">
+    <style>
+         * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+     background-color: black;
+      font-family: Arial, sans-serif;
+      color: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+      /* background-color: black;
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+      color: white;
+    } */
+
+    h1 {
+      font-size: 3rem;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+      margin-top: 30px;
+    }
+
+    p {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .payment-methods {
+      display: flex;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .method {
+      border: 2px solid #00ffff;
+      padding: 20px;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: 0.3s;
+      color: #00ffff;
+    }
+
+    .method:hover {
+      background-color: #00ffff;
+      color: black;
+    }
+
+    .method.active {
+      background-color: #00ffff;
+      color: black;
+    }
+
+    .details {
+      margin-top: 30px;
+      display: none;
+      background-color: white;
+      color: black;
+      padding: 20px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .details.active {
+      display: block;
+    }
+
+    input, label, button {
+      display: block;
+      margin: 15px 0;
+      padding: 10px;
+      width: 100%;
+      max-width: 300px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: none;
+    }
+
+    button {
+      background-color: #00ffff;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00ffff;
+    }
+
+    .copy-btn {
+      background-color: black;
+      color: white;
+      border: 1px solid #00ffff;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    .wallet {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    .wallet span {
+      word-break: break-all;
+    }
+
+        .footer {
+         background-color: #0c0c0c;
+          color: white;
+          padding: 40px 20px;
+        font-family: Arial, sans-serif;
+        margin-top: 20px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+
+.footer-left a,
+.footer-right a {
+  color: #aaf;
+  text-decoration: none;
+}
+
+.footer-right ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-right li {
+  margin: 5px 0;
+}
+
+.footer-note {
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-top: 10px;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  max-width: 100px;
+}
+
+    .img1{
+    height: 179px;
+    width: 500px;
+    margin: 20px;
+    cursor: pointer;
+}
+    header {
+      background: #111;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: cyan;
+      margin-bottom: 60px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: right;
+      gap: 30px;
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: cyan;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      text-shadow: 0 0 10px cyan;
+      color: white;
+    }
+
+    body {
+      padding-top: 600px; /* to offset fixed header */
+    }    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .details{
+         margin-top: 400px;
+
+      } .payment-methods {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .method {
+    text-align: center;
+  }
+
+  .details {
+    width: 95%;
+    padding: 15px;
+  }
+
+  input, label, button {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .wallet {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .copy-btn {
+    margin-left: 0;
+    margin-top: 5px;
+  }
+
+  body {
+    padding: 20px 10px; /* smaller padding for small screens */
+  }
+h1 {
+    font-size: 2rem;
+  }
+      /* header{
+       
+      } */
+    } 
+
+ 
+    </style>
+</head>
+<body>
+
+  <header>
+    <h1 style="color: cyan;">Beast Games</h1>
+     <nav>
+       <a href="/home">Home</a>
+       <a href="/games">Games</a>
+       <a href="/payment">payment</a>
+       <a href="/contact">contact</a>
+       <a href="/videos">videos</a>
+   </nav>
+  </header>
+
+  <h1>Win MrBeast Cash!</h1>
+  
+  <p style="color: cyan;">Choose a payment method below to join the giveaway or games<br> with as low as $50 </p>
+
+  <div class="payment-methods">
+    <div class="method" onclick="showMethod('crypto')">Crypto</div>
+    <div class="method" onclick="showMethod('atm')">ATM Card</div>
+  </div>
+
+  <div id="crypto" class="details">
+    <h2>Send to any wallet below:</h2>
+    <div class="wallet">
+      <span>BTC: bc1q20var9wpmf6xtkkh6dnqrhs9emaujsjcrg0504</span>
+      <button class="copy-btn" onclick="copyText('bc1q20var9wpmf6xtkkh6dnqrhs9emaujsjcrg0504')">Copy</button>
+    </div>
+    <div class="wallet">
+      <span>ETH: 0x56E25C15AC77180E8CA65950A92eF9c9F549781f</span>
+      <button class="copy-btn" onclick="copyText('0x56E25C15AC77180E8CA65950A92eF9c9F549781f')">Copy</button>
+    </div>
+    <div class="wallet">
+      <span>BNB: 0x56E25C15AC77180E8CA65950A92eF9c9F549781f</span>
+      <button class="copy-btn" onclick="copyText('0x56E25C15AC77180E8CA65950A92eF9c9F549781f')">Copy</button>
+    </div>
+    <div class="wallet">
+      <span>USDT TRC20: TEE8xp9pAguyPnPKuMmpRHKBZVdfMuTL89</span>
+      <button class="copy-btn" onclick="copyText('TEE8xp9pAguyPnPKuMmpRHKBZVdfMuTL89')">Copy</button>
+    </div>
+    <div class="wallet">
+      <span>LTC: ltc1qa0uad7ln9lse0glzwdvwxjpdxena8afge9vga6</span>
+      <button class="copy-btn" onclick="copyText('ltc1qa0uad7ln9lse0glzwdvwxjpdxena8afge9vga6')">Copy</button>
+    </div>
+    <label for="curr-pick">Type in your payment crypto</label>
+      <input type="text" class="cuur-pick"  placeholder="cryptocurrency pick" style="background-color: black;color: white;">
+    <label for="proofCrypto">Upload Payment Proof (Image):</label>
+    <input type="file" id="proofCrypto" />
+
+    <button onclick="alert('Payment Submitted!')">Submit</button>
+  </div>
+
+  <div id="atm" class="details">
+    <h2>Pay with ATM/Card</h2>
+    <label for="amount">Enter Amount ($):</label>
+    <input type="number" id="amount" placeholder="e.g. 10.00" />
+
+    <label for="proof">Upload Payment Screenshot:</label>
+    <input type="file" id="proof" />
+
+    <button onclick="alert('Payment Submitted!')">Submit</button>
+  </div>
+  
+ <%- include("partials/footer.ejs") %>
+
+
+  <script>
+    function showMethod(method) {
+      document.querySelectorAll('.details').forEach(d => d.classList.remove('active'));
+      document.querySelectorAll('.method').forEach(d => d.classList.remove('active'));
+      document.getElementById(method).classList.add('active');
+      event.target.classList.add('active');
+    }
+
+    function copyText(text) {
+      navigator.clipboard.writeText(text);
+      alert("Copied: " + text);
+    }
+  </script>
+</body>
+</html>
+
+

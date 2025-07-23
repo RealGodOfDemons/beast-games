@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MrBeast Games</title>
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet"> -->
+  <link rel="stylesheet" href="/styles/main2.css">
+</head>
+<body>
+
+  <header>
+    <h1>Beast Games</h1>
+     <nav>
+       <a href="/home">Home</a>
+       <a href="/games">Games</a>
+       <a href="/payment">payment</a>
+       <a href="/contact">contact</a>
+       <a href="/videos">videos</a>
+   </nav>
+
+  </header>
+
+  <section class="hero" id="home">
+    <h1>Welcome <span> <%= secrets %> </span> </h1>
+       <h1> To the Beast Universe!</h1>
+    <p>Get ready for thrilling challenges, mega rewards, and exclusive MrBeast gaming event.</p>
+  </section>
+
+  <section class="games-section" id="games">
+    <h2>Featured Games</h2>
+    <div class="games-grid">
+      <div class="game-card">
+        <img src="/styles/beast-bliss-2.jpg" alt="Game 1">
+        <h3>Beast Challenge Run</h3>
+        <p>Outrun traps, solve puzzles, and beat your friends to the cash prize.</p>
+      </div>
+      <div class="game-card">
+        <img src="/styles/beast-logo-bliss.jpg" alt="Game 2">
+        <h3>Cash Grab Royale</h3>
+        <p>Collect cash in the arena while dodging exploding drones!</p>
+      </div>
+      <div class="game-card">
+        <img src="/styles/beast-bliss.jpg" alt="Game 3">
+        <h3>MrBeast Builder</h3>
+        <p>Create wild game levels and compete for featured spots & prizes.</p>
+      </div>
+    </div>
+  </section>
+
+       <div class="hero-2">
+       <h2 class="txth">Join The Biggest Challenges Online!</h2>
+       <p class="tstp">Compete. Win. Get Paid. It's that simple.</p>
+       <a href="/payment"  class="btn"> Enter Giveaway</a>
+       <a href="/videos" class="btn">Watch Latest</a>
+  </div>
+  <section class="how-it-works">
+    <h2>🏆 Winners Hall of Fame</h2>
+    <ul class="lists">
+      <li>Sunny from Nigeria won $1,000 🥇</li>
+      <li>Anna from UK won $500 🎉</li>
+      <li>Josh from USA won $5,000 💵</li>
+    </ul>
+  </section>
+    <section class="how-it-works">
+    <h2>⚙ How It Works</h2>
+    <ol class="lists">
+      <li>Join the giveaway or game</li>
+      <li>Watch and engage with the video</li>
+      <li>make payment with any of the available payment method with minimum of  $50</li>
+      <li>Upload payment proof and wait for draw</li>
+    </ol>
+  </section>
+  <section class="cta-section" id="community">
+    <h2>Join the Beast Community!</h2>
+    
+    <p>Get exclusive updates, early access, and special drops.</p>
+    <button>  <a href="https://www.tiktok.com/@mr_beastoffiicial?_r=1&_d=ej3086ha479152&sec_uid=MS4wLjABAAAAtU8GFR561JOEF3f
+                       IklsCOfPnnDW7HhAWppVFmAmdmuL_dZAYrmoG3hfVAvB0DOmN&share_author_id=7528952547664282632&sharer_language=en&source=h5_m&u_code=elcj8ec1e7fgmj&timestamp=1753014212&user_id=7528952547664282632&sec_user_id=MS4wLjABAAAAtU8GFR561JOEF3fIklsCOfPnnDW7HhAWppVFmAmdmuL_dZAYrmoG3hfVAvB0DOmN&item_author_type=1&utm_source=copy&utm_campaign=client_share&utm_medium=android&share_iid=7528952507160332040&share_link_id=7a181750-85f3-459c-ad1d-f28d66599bbc&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b8727%2Cb7360&social_share_type=5&enable_checksum=1" class="acnch-1">Join now</a> </button>
+  </section>
+<!-- 
+  <footer id="contact">
+    &copy; 2025 MrBeast Games. All rights reserved.
+  </footer> -->
+ <%- include("partials/footer.ejs") %>
+</body>
+</html>

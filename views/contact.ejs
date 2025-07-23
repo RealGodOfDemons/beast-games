@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/contact.css">
+</head>
+<body>
+
+  <header>
+    <h1>Beast Games</h1>
+     <nav>
+       <a href="/home">Home</a>
+       <a href="/games">Games</a>
+       <a href="/payment">payment</a>
+       <a href="/contact">contact</a>
+       <a href="/videos">videos</a>
+   </nav>
+
+  </header>
+      <div class="contact">
+        Contact the MrBeast Team 💬
+      </div>
+    
+  
+
+  <main>
+    <h2>Got Questions? Ideas? Let's Connect.</h2>
+    <p>We're always looking to collaborate, solve problems, or hear from awesome fans. Drop your message below!</p>
+
+    <form action="/contact" method="post">
+      <input type="text" placeholder="Your Name"  name="yourname" required>
+      <input type="email" placeholder="Your Email"   name="youremail" required>
+      <textarea rows="5" placeholder="Your Message" name="textarea"  required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="social-links">
+      <p>Or reach out via:</p>
+      <a href="https://x.com/MrBeast" target="_blank">X (Twitter)</a>
+      <a href="mailto:philipadre@gmail.com">Email</a>
+      <a href="https://wa.me/+15485784962">WhatsApp</a>
+    </div>
+  </main>
+
+  <div class="ftr">
+    💻 Built by MrBeast Dev Team | 🔒 Secure & Private
+  </div> 
+  <%- include("partials/footer.ejs") %>
+</body>
+</html>

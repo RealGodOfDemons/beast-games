@@ -1,0 +1,27 @@
+{
+    "name": "eben-project",
+    "version": "1.0.0",
+    "description": "",
+    "main": "backend.js",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bcrypt": "^6.0.0",
+        "body-parser": "^2.2.0",
+        "dotenv": "^17.2.0",
+        "ejs": "^3.1.10",
+        "express": "^5.1.0",
+        "express-session": "^1.18.1",
+        "from": "^0.1.7",
+        "multer": "^2.0.2",
+        "nodemailer": "^7.0.5",
+        "passport": "^0.7.0",
+        "passport-local": "^1.0.0",
+        "pg": "^8.16.3"
+    }
+}

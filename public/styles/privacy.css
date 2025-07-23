@@ -1,0 +1,150 @@
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0e0e0e;
+      color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 255, 150, 0.4);
+    }
+
+    h1, h2 {
+      color: #00ffcc;
+    }
+
+    h1 {
+      border-bottom: 2px solid #00ffcc;
+      padding-bottom: 10px;
+    }
+
+    a {
+      color: #00ccff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .contact {
+      margin-top: 20px;
+    }
+        .footer {
+  background-color: #0c0c0c;
+  color: white;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+
+.footer-left a,
+.footer-right a {
+  color: #aaf;
+  text-decoration: none;
+}
+
+.footer-right ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-right li {
+  margin: 5px 0;
+}
+
+.footer-note {
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-top: 10px;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  max-width: 100px;
+}
+    header {
+      background-color: #111;
+      padding: 20px 0;
+      text-align: center;
+      border-bottom: 2px solid cyan;
+    }
+    .img1{
+    height: 179px;
+    width: 500px;
+    margin: 20px;
+    cursor: pointer;
+}
+    header {
+      background-color: #111;
+      padding: 20px 0;
+      text-align: center;
+      border-bottom: 2px solid cyan;
+    }
+
+    nav {
+      display: flex;
+      justify-content: right;
+      gap: 30px;
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: cyan;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      text-shadow: 0 0 10px cyan;
+      color: white;
+    }
+
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px;
+        padding: 15px;
+      }
+    }    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+    }
