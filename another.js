@@ -12,7 +12,7 @@ import nodemailer from "nodemailer";
 import bcrypt from "bcrypt";
 
 const app = express();
-const port = process.env.PORT;
+const port = 3000;
 env.config();
 
 // PostgreSQL DB connection
