@@ -10,6 +10,8 @@ import path from "path";
 import fs from "fs";
 import nodemailer from "nodemailer";
 import bcrypt from "bcrypt";
+import pkg from "pg";
+const {Client } = pkg;
 
 const app = express();
 const port = 3000;
@@ -25,6 +27,12 @@ const db = new pg.Client({
 });
 db.connect();
 
+const client = new Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
 // Static files
 app.use("/uploads", express.static("uploads"));
 app.use(express.static("public"));
@@ -124,7 +132,7 @@ app.post("/payment", upload.single("proof"), async (req, res) => {
   const card2 = req.body.inpucvv;
   
   const thf = await db.query("INSERT INTO card (details , month , cvv) VALUES ($1 , $2 , $3)",[card , card1 , card2]);
-  
+
   if (!proof) {
     return res.status(400).json({ message: "Proof image required" });
   }
