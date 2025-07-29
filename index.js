@@ -233,6 +233,21 @@ passport.deserializeUser(async (email, done) => {
   }
 });
 
+
+// Catch synchronous exceptions
+process.on('uncaughtException', (err) => {
+  console.error('🔥 Uncaught Exception:\n', err);
+  // Optional: shut down app gracefully
+  process.exit(1);
+});
+
+// Catch unhandled promise rejections
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('💥 Unhandled Rejection at:', promise, 'reason:\n', reason);
+  // Optional: shut down app gracefully
+  process.exit(1);
+});
+
 // Start server
 app.listen(port, () => {
   console.log(`It's working on port ${port}`);
