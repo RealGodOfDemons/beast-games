@@ -236,4 +236,7 @@ passport.deserializeUser(async (email, done) => {
 // Start server
 app.listen(port, () => {
   console.log(`It's working on port ${port}`);
+}).on("error", (err) => {
+  console.log("This is the error");
+  console.log(err);
 });
